@@ -43,11 +43,6 @@ $(document).ready(function() {
                nextTrainFormatted: nextTrainFormatted,
                minutesTillTrain: minutesTillTrain
      	});
-          // The notes below are for finding the path to the key in the data being pushed, leaving as notes to save for later use.
-          /*console.log(keyHolder.path.u[0]);
-          var key = keyHolder.path.u[0];
-          console.log(key);*/
-     	// Don't refresh the page!
 
           $('#name-input').val('');
      	$('#destination-input').val('');
@@ -56,9 +51,8 @@ $(document).ready(function() {
 
      	return false;
      });
-          //id=" + "'" + keyHolder.path.u[0] + "'" + "
+          
      dataRef.on("child_added", function(childSnapshot) {
-	// full list of items to the well
 
 		$('.train-schedule').append("<tr class='table-row' id=" + "'" + childSnapshot.key() + "'" + ">" +
                "<td class='col-xs-3'>" + childSnapshot.val().name +
@@ -84,4 +78,4 @@ $("body").on("click", ".remove-train", function(){
      dataRef.child(getKey).remove();
 });
 
-}); // Closes jQuery wrapper
+}); 
